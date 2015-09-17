@@ -1,25 +1,32 @@
 # -*- coding: utf-8 -*-
-"""`sphinx_rtd_theme` lives on `Github`_.
+"""Fork of sphinx_rtd_theme for LSST design documents.
+
+Original repo is at:
 
 .. _github: https://www.github.com/snide/sphinx_rtd_theme
 
+Fork lives at:
+
+    https://github.com/lsst-sqre/lsst_dd_rtd_theme
+
 """
 from setuptools import setup
-from sphinx_rtd_theme import __version__
+from lsst_dd_rtd_theme import __version__
 
 
 setup(
-    name='sphinx_rtd_theme',
+    name='lsst_dd_rtd_theme',
     version=__version__,
-    url='https://github.com/snide/sphinx_rtd_theme/',
+    url='https://github.com/lsst-sqre/lsst_dd_rtd/theme/',
     license='MIT',
-    author='Dave Snider',
-    author_email='dave.snider@gmail.com',
-    description='ReadTheDocs.org theme for Sphinx, 2013 version.',
+    author='Jonathan Sick, originally Dave Snider',
+    author_email='jsick@lsst.org',
+    description='ReadTheDocs.org theme for Sphinx, 2013 version,'
+                'forked by LSST/AURA.',
     long_description=open('README.rst').read(),
     zip_safe=False,
-    packages=['sphinx_rtd_theme'],
-    package_data={'sphinx_rtd_theme': [
+    packages=['lsst_dd_rtd_theme'],
+    package_data={'lsst_dd_rtd_theme': [
         'theme.conf',
         '*.html',
         'static/css/*.css',
