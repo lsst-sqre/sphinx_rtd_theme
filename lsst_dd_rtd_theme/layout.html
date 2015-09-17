@@ -92,7 +92,7 @@
           {% if logo and theme_logo_only %}
             <a href="{{ pathto(master_doc) }}">
           {% else %}
-            <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
+            <a href="{{ pathto(master_doc) }}"> {{ project }}
           {% endif %}
 
           {% if logo %}
@@ -113,14 +113,14 @@
             {% endif %}
           {% endif %}
 
-          {% include "searchbox.html" %}
+          {# include "searchbox.html" #}
 
           {% endblock %}
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           {% block menu %}
-            {% set toctree = toctree(maxdepth=4, collapse=theme_collapse_navigation, includehidden=True) %}
+            {% set toctree = toctree(maxdepth=1, collapse=False, includehidden=False) %}
             {% if toctree %}
                 {{ toctree }}
             {% else %}
