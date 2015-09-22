@@ -1,4 +1,4 @@
-{# TEMPLATE VAR SETTINGS #}
+{# TEMPLATE VAR SETTING #}
 {%- set url_root = pathto('', 1) %}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
 {%- if not embedded and docstitle %}
@@ -15,7 +15,7 @@
   {{ metatags }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block htmltitle %}
-  <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+  <title>{{ project }}</title>
   {% endblock %}
 
   {# FAVICON #}
@@ -33,10 +33,7 @@
 
   {% endif %}
 
-  {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  {% endif %}
+  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
 
   {% for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
@@ -92,7 +89,7 @@
           {% if logo and theme_logo_only %}
             <a href="{{ pathto(master_doc) }}">
           {% else %}
-            <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
+            <a href="{{ pathto(master_doc) }}"> {{ project }}
           {% endif %}
 
           {% if logo %}
@@ -113,14 +110,14 @@
             {% endif %}
           {% endif %}
 
-          {% include "searchbox.html" %}
+          {# include "searchbox.html" #}
 
           {% endblock %}
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           {% block menu %}
-            {% set toctree = toctree(maxdepth=4, collapse=theme_collapse_navigation, includehidden=True) %}
+            {% set toctree = toctree(maxdepth=1, collapse=False, includehidden=False) %}
             {% if toctree %}
                 {{ toctree }}
             {% else %}
@@ -144,8 +141,8 @@
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
         <div class="rst-content">
-          {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            {% include "dd_masthead.html" %}
            <div itemprop="articleBody">
             {% block body %}{% endblock %}
            </div>
@@ -176,10 +173,7 @@
 
   {% endif %}
 
-  {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
-    <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
-  {% endif %}
+   <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
 
   {# STICKY NAVIGATION #}
   {% if theme_sticky_navigation %}
