@@ -122,27 +122,3 @@ This default task will do the following **very cool things that make it worth th
 3. It'll watch for changes to the sass files and build css from the changes.
 4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
    or .css files.
-
-
-Before you create an issue
---------------------------
-
-I don't have a lot of time to maintain this project due to other responsibilities.
-I know there are a lot of Python engineers out there that can't code sass / css and
-are unable to submit pull requests. That said, submitting random style bugs without
-at least providing sample documentation that replicates your problem is a good
-way for me to ignore your request. RST unfortunately can spit out a lot of things
-in a lot of ways. I don't have time to research your problem for you, but I do
-have time to fix the actual styling issue if you can replicate the problem for me.
-
-
-Before you send a Pull Request
-------------------------------
-
-When you're done with your edits, you can run ``grunt build`` to clean out the old
-files and rebuild a new distribution, compressing the css and cleaning out
-extraneous files. Please do this before you send in a PR.
-
-TODO
-====
-* Separate some sass variables at the theme level so you can overwrite some basic colors.
