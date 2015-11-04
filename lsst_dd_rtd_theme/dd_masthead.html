@@ -3,7 +3,7 @@
   <ul class="dd-authors">
     {% for _author in author_list %}
       {% if loop.index == loop.length %}
-        <li class="dd-authors-item">{{ _author }}.</li>
+        <li class="dd-authors-item">{{ _author }}</li>
       {% elif loop.index == loop.length - 1 %}
         <li class="dd-authors-item">{{ _author }} and</li>
       {% else %}
