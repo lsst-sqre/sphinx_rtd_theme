@@ -15,7 +15,7 @@ from lsst_dd_rtd_theme import __version__
 
 
 setup(
-    name='lsst_dd_rtd_theme',
+    name='lsst-dd-rtd-theme',
     version=__version__,
     url='https://github.com/lsst-sqre/lsst_dd_rtd/theme/',
     license='MIT',
