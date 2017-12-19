@@ -5129,5 +5129,26 @@ span[id*='MathJax-Span'] {
 .dd-authors-item {
   display: inline;
 }
+.project-title {
+  display: block;
+  text-align: left;
+  // padding-left: 0.4045em;
+  margin-top: 2em;
+}
+.edition-switcher {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0.4045em;
+  margin-top: 1em;
+}
+.edition-switcher li {
+  padding-bottom: 0.25em;
+}
+.edition-switcher li a {
+  color: #b3b3b3;
+}
+.edition-switcher li a:hover {
+  background-color: #4e4a4a;
+}
 
 /*# sourceMappingURL=theme.css.map */
