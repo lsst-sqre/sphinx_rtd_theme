@@ -83,19 +83,13 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search"  style="background-color: #343131">
           {% block sidebartitle %}
 
-          {% if logo and theme_logo_only %}
-            <a href="{{ pathto(master_doc) }}">
-          {% else %}
-            <a href="{{ pathto(master_doc) }}"> {{ project }}
-          {% endif %}
+          <a href="https://www.lsst.org">
+            <img src="{{ pathto('_static/' + 'lsst-logo-dark.svg', 1) }}" class="logo" />
 
-          {% if logo %}
-            {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}
-            <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" />
-          {% endif %}
+            <span style="display: block; margin-top: 2em">{{ project }}</span>
           </a>
 
           {% if theme_display_version %}
