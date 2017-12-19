@@ -95,6 +95,9 @@
           <ul class="edition-switcher">
             <li>Edition: {{ version }}</li>
             <li><a href="../v">Switch editions</a></li>
+            {% if edit_url %}
+            <li><a href="{{ edit_url }}">Edit on GitHub</a></li>
+            {% endif %}
           </ul>
 
           {# include "searchbox.html" #}
