@@ -83,32 +83,22 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search"  style="background-color: #343131">
           {% block sidebartitle %}
 
-          {% if logo and theme_logo_only %}
-            <a href="{{ pathto(master_doc) }}">
-          {% else %}
-            <a href="{{ pathto(master_doc) }}"> {{ project }}
-          {% endif %}
+          <a href="https://www.lsst.org">
+            <img src="{{ pathto('_static/' + 'lsst-logo-dark.svg', 1) }}" class="logo" />
 
-          {% if logo %}
-            {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}
-            <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" />
-          {% endif %}
+            <span class="project-title">{{ project }}</span>
           </a>
 
-          {% if theme_display_version %}
-            {%- set nav_version = version %}
-            {% if READTHEDOCS and current_version %}
-              {%- set nav_version = current_version %}
+          <ul class="edition-switcher">
+            <li>Edition: {{ version }}</li>
+            <li><a href="../v">Switch editions</a></li>
+            {% if edit_url %}
+            <li><a href="{{ edit_url }}">Edit on GitHub</a></li>
             {% endif %}
-            {% if nav_version %}
-              <div class="version">
-                {{ nav_version }}
-              </div>
-            {% endif %}
-          {% endif %}
+          </ul>
 
           {# include "searchbox.html" #}
 

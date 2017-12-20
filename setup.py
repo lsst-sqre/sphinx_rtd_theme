@@ -31,6 +31,7 @@ setup(
         '*.html',
         'static/css/*.css',
         'static/js/*.js',
+        'static/*.svg',
         'static/font/*.*'
     ]},
     include_package_data=True,
