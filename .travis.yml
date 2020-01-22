@@ -1,0 +1,20 @@
+dist: xenial
+language: python
+git:
+  # Clone the full depth for setuptools_scm (to count commits in very large
+  # branches) and for the testing of documenteer's Git metadata inspection
+  # APIs.
+  depth: false
+matrix:
+  include:
+    # Use the Python 3.7 build with latest Sphinx for PyPI deployments and doc
+    # uploads
+    - python: "3.7"
+      env: PYPI_DEPLOY=true
+      install:
+        - "pip install ."
+script:
+  - "echo 1"
+env:
+  global:
+    - PYPI_DEPLOY=false  # disable PyPI pushes in regular matrix
