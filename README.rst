@@ -27,7 +27,7 @@ Using it
 
 In your ``requirements.txt`` add::
 
-   -e git://github.com/lsst-sqre/lsst_dd_rtd_theme.git@master#egg=lsst_dd_rtd_theme
+   lsst-dd-rtd-theme
 
 In your ``conf.py`` file:
 
@@ -41,6 +41,13 @@ In your ``conf.py`` file:
 Changelog
 =========
 
+0.2.3 (2020-01-22)
+------------------
+
+* Modernize packaging with ``pyproject.toml`` and ``setup.cfg`` files.
+  We're also using ``setuptools_scm`` now.
+  In doing this, we've cleaned up many packaging metadata errors present in earlier releases.
+* Use Travis CI to release to PyPI.
 
 v0.1.8
 ------
