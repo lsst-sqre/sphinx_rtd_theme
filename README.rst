@@ -41,6 +41,11 @@ In your ``conf.py`` file:
 Changelog
 =========
 
+0.2.4 (2021-11-08)
+------------------
+
+* Fix unordered list formatting with recent dependency sets.
+
 0.2.3 (2020-01-22)
 ------------------
 
